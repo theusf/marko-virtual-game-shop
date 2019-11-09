@@ -18,31 +18,31 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
 function render(input, out, __component, component, state) {
   var data = input;
 
-  out.w("<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\"><script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script><link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.0/css/all.css\" integrity=\"sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ\" crossorigin=\"anonymous\"><style>\n  span {\n    display: inline-block;\n    width: 200px;\n    height: 320px;\n    margin: 9px;\n  }\n</style><html><body class=\"bg-secondary\">");
+  out.w("<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\"><script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script><link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.0/css/all.css\" integrity=\"sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ\" crossorigin=\"anonymous\"><style>\r\n  span {\r\n    display: inline-block;\r\n    width: 200px;\r\n    height: 320px;\r\n    margin: 9px;\r\n  }\r\n</style><html><body class=\"bg-secondary\">");
 
   component_globals_tag({}, out);
 
-  out.w("<nav class=\"navbar navbar-dark bg-dark\"><form class=\"form-inline \" action=\"/login\"><button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Login</button></form><form class=\"form-inline \" action=\"/login\"><button class=\"btn btn-warning my-2 my-sm-0\" type=\"submit\"><i class=\"fas fa-shopping-cart\"></i></button></form></nav><div class=\"container m-5 pb-5 bg-secondary\"><div class=\"row\"><form class=\"form-inline\"><input class=\"form-control mr-sm-2 w-100\" type=\"search\" placeholder=\"Buscar produtos\" aria-label=\"Search\"><button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button></form></div><div class=\"row\">");
+  out.w("<nav class=\"navbar navbar-dark bg-dark\"><div class=\"row\"><form class=\"form-inline\"><input class=\"form-control col\" type=\"search\" placeholder=\"Buscar produtos\" aria-label=\"Search\"><button class=\"form-control btn btn-success col\" type=\"submit\">Buscar</button></form><form class=\"form-inline\" action=\"/login\"><button class=\"btn btn-warning my-2 my-sm-0\" type=\"submit\"><i class=\"fas fa-shopping-cart\"></i></button></form><form class=\"form-inline\" action=\"/login\"><button class=\"btn my-2 my-sm-0 btn-outline-success \" type=\"submit\">Login</button></form></div></nav><div class=\"container m-5 pb-5 bg-secondary\"><div class=\"row\">");
 
   var $for$0 = 0;
 
   marko_forEach(data.produtos, function(produto) {
     var $keyScope$0 = "[" + (($for$0++) + "]");
 
-    out.w("<span class=\"rounded bg-light\"><img class=\"\"" +
+    out.w("<span class=\"rounded bg-light\"><img class=\"m-5\"" +
       marko_attr("src", produto.Img) +
-      " style=\"width:50%;\"><div class=\"\">" +
+      " style=\"width:50%;\"><div class=\"m-1\">" +
       marko_escapeXml(produto.Descricao) +
-      "</div><div class=\"\">" +
+      "</div><div class=\"m-1\">" +
       marko_escapeXml(produto.Preco) +
-      "</div> </span>");
+      "</div> <form class=\"form-inline\" action=\"/login\"><button class=\"btn my-2 my-sm-0 btn-outline-success \" type=\"submit\">Login</button></form></span>");
   });
 
   out.w("</div></div>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "22");
+  await_reorderer_tag({}, out, __component, "24");
 
   out.w("</body></html>");
 }

@@ -1,6 +1,4 @@
 
-var db = require('../../config/sqlitedatabase');
-
 const Produtos = require('../controllers/produtos_controller');
 const Autenticacao = require('../controllers/autenticacao_controller');
 
@@ -48,6 +46,9 @@ app.get('/login', function(req,res){
 
 
 app.post('/validaracesso', Autenticacao.validarAcesso); 
+
+app.get('/produto/:idprod', Produtos.listaDadosProdutos()); 
+
 
 }
 
