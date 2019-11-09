@@ -2,7 +2,7 @@
 var db = require('../../config/sqlitedatabase');
 
 const Produtos = require('../controllers/produtos_controller');
-const Usuarios = require('../controllers/usuarios_controller');
+const Autenticacao = require('../controllers/autenticacao_controller');
 
 module.exports = (app) => {
 
@@ -47,7 +47,7 @@ app.get('/login', function(req,res){
 }); 
 
 
-app.post('/validaracesso', Usuarios.validarAcesso()); 
+app.post('/validaracesso', Autenticacao.validarAcesso); 
 
 }
 
