@@ -1,14 +1,14 @@
 var db = require('../../config/sqlitedatabase');
 
-const ProdutosDAO = require('../BD/produtos_dao');
-const Produtos_dao = new ProdutosDAO(db);
+const PedidoDAO = require('../BD/pedido_dao');
+const Pedidos = new PedidoDAO(db);
 
-class ProdutosController
+class CarrinhoController
 {
 
-    listarProdutos(){
-        return function(req,res) {
-                Produtos_dao.selectProdutos( function(erro,resultados){
+    addPedido(req,res){
+                const {}
+                Pedidos.insertPedido( function(erro,resultados){
                     if (erro){
                         res.send("Deu erro em" + resultados.length);
                     }
@@ -18,7 +18,16 @@ class ProdutosController
                         });    
                 })
                 
-        }}
+        }
+
+        listaDadosProdutos() {
+            return function (req, res) {
+                const id_produto = req.params.idprod;
+                //const id_usu = req.cod_usu;
+                console.log(id_produto)
+            }
+        }
+
 
 
 
@@ -32,7 +41,7 @@ class ProdutosController
                     if (produto.length < 1) {
                         return console.log('Erro')
                     }
-                    console.log(req.session.login)
+                    
                     res.marko(  
                         require('../views/produtos/produtoinfo.marko'),{
                         prod: produto,
@@ -46,4 +55,4 @@ class ProdutosController
 
 }
 
-module.exports = new ProdutosController;
+module.exports = new CarrinhoController;

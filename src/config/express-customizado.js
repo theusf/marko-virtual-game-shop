@@ -29,15 +29,18 @@ var opcoes = {
     user:'root',
     password:'',
     database:'nodevesp'
-   }
-var session_store = new express_store(opcoes);
+   }*/
+
 
 app.use(session({
-    secret: 'odesempre',
+    secret: 'mySecretPhrase',
+    resave: false,
     saveUninitialized: true,
-    resave: true,
-    store: session_store
-})); */
+    cookie: {
+       // secure: true // requires HTTPS connection
+    }
+  
+})); 
 
 
    app.use(methodOverride(function (req,res) {

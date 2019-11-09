@@ -1,6 +1,8 @@
 
 const Produtos = require('../controllers/produtos_controller');
 const Autenticacao = require('../controllers/autenticacao_controller');
+const Carrinho = require('../controllers/carrinho_controller');
+
 
 module.exports = (app) => {
 
@@ -47,7 +49,9 @@ app.get('/login', function(req,res){
 
 app.post('/validaracesso', Autenticacao.validarAcesso); 
 
-app.get('/produto/:idprod', Produtos.listaDadosProdutos()); 
+app.get('/produtoinfo/:idprod', Produtos.listaDadosProdutos); 
+
+//app.post('/addcarrinho', Carrinho.addPedido); 
 
 
 }

@@ -10,8 +10,8 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
     marko_loadTag = marko_helpers.t,
     component_globals_tag = marko_loadTag(require("marko/src/core-tags/components/component-globals-tag")),
     marko_forEach = marko_helpers.f,
-    marko_attr = marko_helpers.a,
     marko_escapeXml = marko_helpers.x,
+    marko_attr = marko_helpers.a,
     init_components_tag = marko_loadTag(require("marko/src/core-tags/components/init-components-tag")),
     await_reorderer_tag = marko_loadTag(require("marko/src/core-tags/core/await/reorderer-renderer"));
 
@@ -22,27 +22,43 @@ function render(input, out, __component, component, state) {
 
   component_globals_tag({}, out);
 
-  out.w("<nav class=\"navbar navbar-dark bg-dark\"><div class=\"row\"><form class=\"form-inline\"><input class=\"form-control col\" type=\"search\" placeholder=\"Buscar produtos\" aria-label=\"Search\"><button class=\"form-control btn btn-success col\" type=\"submit\">Buscar</button></form><form class=\"form-inline\" action=\"/login\"><button class=\"btn btn-warning my-2 my-sm-0\" type=\"submit\"><i class=\"fas fa-shopping-cart\"></i></button></form><form class=\"form-inline\" action=\"/login\"><button class=\"btn my-2 my-sm-0 btn-outline-success \" type=\"submit\">Login</button></form></div></nav><div class=\"container m-5 pb-5 bg-secondary\"><div class=\"row\">");
+  out.w("<nav class=\"navbar navbar-dark bg-dark\"><div class=\"row\">");
 
   var $for$0 = 0;
 
-  marko_forEach(data.produtos, function(produto) {
+  marko_forEach(data.usu, function(usuario) {
     var $keyScope$0 = "[" + (($for$0++) + "]");
 
-    out.w("<span class=\"rounded bg-light\"><img class=\"m-5\"" +
+    out.w("<h1>" +
+      marko_escapeXml(usuario.Nome_Completo) +
+      "</h1>");
+  });
+
+  out.w("<form class=\"form-inline\"><input class=\"form-control col\" type=\"search\" placeholder=\"Buscar produtos\" aria-label=\"Search\"><button class=\"form-control btn btn-success col\" type=\"submit\">Buscar</button></form><form class=\"form-inline\" action=\"/login\"><button class=\"btn btn-warning my-2 my-sm-0\" type=\"submit\"><i class=\"fas fa-shopping-cart\"></i></button></form><form class=\"form-inline\" action=\"/login\"><button class=\"btn my-2 my-sm-0 btn-outline-success \" type=\"submit\">Login</button></form></div></nav><div class=\"container m-5 pb-5 bg-secondary\"><div class=\"row\">");
+
+  var $for$1 = 0;
+
+  marko_forEach(data.produtos, function(produto) {
+    var $keyScope$1 = "[" + (($for$1++) + "]");
+
+    out.w("<a" +
+      marko_attr("href", "/produtoinfo/" + produto.idProduto) +
+      "><span class=\"rounded bg-light\"><img class=\"m-5\"" +
       marko_attr("src", produto.Img) +
       " style=\"width:50%;\"><div class=\"m-1\">" +
       marko_escapeXml(produto.Descricao) +
       "</div><div class=\"m-1\">" +
       marko_escapeXml(produto.Preco) +
-      "</div> <form class=\"form-inline\" action=\"/login\"><button class=\"btn my-2 my-sm-0 btn-outline-success \" type=\"submit\">Login</button></form></span>");
+      "</div> <div class=\"m-1\">" +
+      marko_escapeXml(produto.idProduto) +
+      "</div> </span></a>");
   });
 
   out.w("</div></div>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "24");
+  await_reorderer_tag({}, out, __component, "25");
 
   out.w("</body></html>");
 }

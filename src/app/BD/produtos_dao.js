@@ -18,6 +18,20 @@ class ProdutosDAO
             
     }
 
+
+    selectInfoProduto(id_produto){
+        return new Promise((resolve, reject) => {
+            let sql = "SELECT * FROM Produtos where idProduto = " + id_produto;
+            this._db.all(sql, [],(err, resultados) => {
+                if (err) {
+                    return reject(err)
+                }
+                resolve(resultados)
+            });        
+        })
+    }
+    
+
     
 }
 

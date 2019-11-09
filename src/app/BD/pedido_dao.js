@@ -28,4 +28,4 @@ class PedidoDAO
 
 }
 
-module.exports = CarrinhoDAO
+module.exports = PedidoDAO
