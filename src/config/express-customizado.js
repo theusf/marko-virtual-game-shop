@@ -2,60 +2,29 @@
    NO PROJETO  */
    require('marko/node-require').install();
    require('marko/express');
-   
-   
-   const express = require('express');
+   var express = require('express')
+   var cookieSession = require('cookie-session')
 
+      
+   var app = express()
+   
+   app.use(cookieSession({
+     name: 'session',
+     keys: ['key1', 'key2'],
+   
+     // Cookie Options
+     maxAge: 24 * 60 * 60 * 1000 // 24 hours
+   }))
 
-   const session = require('express-session');
-   const express_store = require('express-mysql-session')(session);
-   
-   const app = express();
-   
-   const bodyParser = require('body-parser');
-   
+const bodyParser = require('body-parser');
+
    // essa permite que o nodejs consiga pegar dados via req.body
    app.use(bodyParser.urlencoded({
        extended: true
    }));
+
    
-
-  const methodOverride = require ('method-override');
-
-/*sessison
-var opcoes = {
-    host:'localhost',
-    port:3306,
-    user:'root',
-    password:'',
-    database:'nodevesp'
-   }*/
-
-
-app.use(session({
-    secret: 'mySecretPhrase',
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-       // secure: true // requires HTTPS connection
-    }
   
-})); 
-
-
-   app.use(methodOverride(function (req,res) {
-
-    if (req.body && typeof req.body === 'object' && '_method' in req.body)
-    {
-        var method = req.body._method;
-        delete req.body._method;
-        return method;
-    }
-}));
-
-
-
-
 
    // indicando um caminho de diretorio
    app.use('/caminho',express.static('src/app/views'));

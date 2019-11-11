@@ -39,45 +39,33 @@
 
  
 
-
-   <for (produto in data.prod)>
-      
-        <div class="container-fluid">
+<div class="container-fluid">
+   <for (produto in data.prod)>   
           <div class="row bg-danger">
-
               <div class="col-sm-4" style="background-color:lavender;">
-              <img class="m-5" src=produto.Img style="width:50%;">
-
+                <img class="m-5" src=produto.Img style="width:20%;">
               </div>
                
-              
                   <div class="col-sm-8" style="background-color:lavenderblush; text-align: right;">
                   
-                  <form action="/addcarrinho" method="post">
-                  <p> <h1>${produto.Descricao}</h1> </p>
-                  <div class="">${produto.Preco}</div>  
-               
-                  <button class="btn btn-success my-2 my-sm-0" type="submit">Adicionar ao carrim</button>
-                  <br>
-                     <input class="" name="id_produto" value="${produto.idProduto}"> 
-                  <input class="" name="valor_produto" value="${produto.Preco}"> 
-                  </form>
-              
-              
-              </div>
-
-
-              
-            </div>
-                    
-            
-  
-              
-
-          </div>
-      
-
+                    <form action="/addcarrinho" method="post">
+                      <p> <h1>${produto.Descricao}</h1> </p>
+                      <h3>R$ ${produto.Valor_Total}</h3>  
+                      <br>
+                      <input type="hidden" name="id_produto" value="${produto.idProduto}"> 
+                      <input type="hidden" name="valor_produto" value="${produto.Valor_Total}"> 
+                    </form>           
+                  </div>
+            </div>         
    </for>
+    <div class="row"> 
+      <div class="col-sm-4" style="background-color:lavender;"></div>       
+      
+       <div class="col-sm-8" style="background-color:lavenderblush; text-align: right;">
+       <h3>Valor total: R$ ${data.vtotal}</h3>
+       </div>  
+      </div>
+</div>
 
 
     

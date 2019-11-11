@@ -2,7 +2,7 @@
 "use strict";
 
 var marko_template = module.exports = require("marko/src/html").t(__filename),
-    marko_componentType = "/projnode19377$1.0.0/src/app/views/produtos/produtoinfo.marko",
+    marko_componentType = "/projnode19377$1.0.0/src/app/views/usuarios/carrinho.marko",
     components_helpers = require("marko/src/runtime/components/helpers"),
     marko_renderer = components_helpers.r,
     marko_defineComponent = components_helpers.c,
@@ -22,29 +22,35 @@ function render(input, out, __component, component, state) {
 
   component_globals_tag({}, out);
 
-  out.w("<nav class=\"navbar navbar-dark bg-dark\"><div class=\"row\"><form class=\"form-inline\"><input class=\"form-control col\" type=\"search\" placeholder=\"Buscar produtos\" aria-label=\"Search\"><button class=\"form-control btn btn-success col\" type=\"submit\">Buscar</button></form><form class=\"form-inline\" action=\"/login\"><button class=\"btn btn-warning my-2 my-sm-0\" type=\"submit\"><i class=\"fas fa-shopping-cart\"></i></button></form></div></nav>");
+  out.w("<nav class=\"navbar navbar-dark bg-dark\"><div class=\"row\"><form class=\"form-inline\"><input class=\"form-control col\" type=\"search\" placeholder=\"Buscar produtos\" aria-label=\"Search\"><button class=\"form-control btn btn-success col\" type=\"submit\">Buscar</button></form><form class=\"form-inline\" action=\"/login\"><button class=\"btn btn-warning my-2 my-sm-0\" type=\"submit\"><i class=\"fas fa-shopping-cart\"></i></button></form></div></nav><div class=\"container-fluid\">");
 
   var $for$0 = 0;
 
   marko_forEach(data.prod, function(produto) {
+    out.w(" ");
+
     var $keyScope$0 = "[" + (($for$0++) + "]");
 
-    out.w("<div class=\"container-fluid\"><div class=\"row bg-danger\"><div class=\"col-sm-4\" style=\"background-color:lavender;\"><img class=\"m-5\"" +
+    out.w("<div class=\"row bg-danger\"><div class=\"col-sm-4\" style=\"background-color:lavender;\"><img class=\"m-5\"" +
       marko_attr("src", produto.Img) +
-      " style=\"width:50%;\"></div><div class=\"col-sm-8\" style=\"background-color:lavenderblush; text-align: right;\"><form action=\"/addcarrinho\" method=\"post\"><p> <h1>" +
+      " style=\"width:20%;\"></div><div class=\"col-sm-8\" style=\"background-color:lavenderblush; text-align: right;\"><form action=\"/addcarrinho\" method=\"post\"><p> <h1>" +
       marko_escapeXml(produto.Descricao) +
-      "</h1> </p><div class=\"\">" +
-      marko_escapeXml(produto.Preco) +
-      "</div> <button class=\"btn btn-success my-2 my-sm-0\" type=\"submit\">Adicionar ao carrim</button><br><input class=\"\" name=\"id_produto\"" +
+      "</h1> </p><h3>R$ " +
+      marko_escapeXml(produto.Valor_Total) +
+      "</h3> <br><input type=\"hidden\" name=\"id_produto\"" +
       marko_attr("value", "" + produto.idProduto) +
-      "> <input class=\"\" name=\"valor_produto\"" +
-      marko_attr("value", "" + produto.Preco) +
-      "> </form></div></div></div>");
+      "> <input type=\"hidden\" name=\"valor_produto\"" +
+      marko_attr("value", "" + produto.Valor_Total) +
+      "> </form> </div></div> ");
   });
+
+  out.w("<div class=\"row\"> <div class=\"col-sm-4\" style=\"background-color:lavender;\"></div> <div class=\"col-sm-8\" style=\"background-color:lavenderblush; text-align: right;\"><h3>Valor total: R$ " +
+    marko_escapeXml(data.vtotal) +
+    "</h3></div> </div></div>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "27");
+  await_reorderer_tag({}, out, __component, "30");
 
   out.w("</body></html>");
 }
@@ -57,7 +63,7 @@ marko_template._ = marko_renderer(render, {
 marko_template.Component = marko_defineComponent({}, marko_template._);
 
 marko_template.meta = {
-    id: "/projnode19377$1.0.0/src/app/views/produtos/produtoinfo.marko",
+    id: "/projnode19377$1.0.0/src/app/views/usuarios/carrinho.marko",
     tags: [
       "marko/src/core-tags/components/component-globals-tag",
       "marko/src/core-tags/components/init-components-tag",

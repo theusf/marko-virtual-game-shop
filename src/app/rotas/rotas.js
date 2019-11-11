@@ -13,34 +13,17 @@ module.exports = (app) => {
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
+    //console.log(req.session)
 });
 
 
 
-
-/*let sql = `SELECT * FROM Produtos`;
-
-app.get('/', 
-function(req,res) {
-
-    db.all(sql, [],(err, resultados) => {
-        if (err) {
-            res.send("Deu erro em" + resultados.length);
-        }
-        res.marko(
-            require('../views/produtos/Produtos.marko'),{
-            produtos: resultados
-            });    
-    })
-
-
-}); */
-
-
-app.get('/', Produtos.listarProdutos()); 
+app.get('/', Produtos.listarProdutos); 
 
 
 app.get('/login', function(req,res){
+    console.log("Variavel de Sessao LOGIN = " + req.session.usuario );
+
     res.marko(
         require('../views/usuarios/login.marko')
     )
@@ -51,7 +34,9 @@ app.post('/validaracesso', Autenticacao.validarAcesso);
 
 app.get('/produtoinfo/:idprod', Produtos.listaDadosProdutos); 
 
-//app.post('/addcarrinho', Carrinho.addPedido); 
+app.post('/addcarrinho', Carrinho.criarPedido); 
+
+app.get('/carrinho', Carrinho.montaCarrinho); 
 
 
 }

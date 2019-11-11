@@ -13,7 +13,7 @@ let db = new sqlite3.Database('./sqlite/produtos.db', sqlite3.OPEN_READWRITE, (e
       if (err) {
         console.error(err.message);
       }
-      console.log(row);
+      //console.log(row);
     });
   });
 

@@ -6,19 +6,20 @@ const Produtos_dao = new ProdutosDAO(db);
 class ProdutosController
 {
 
-    listarProdutos(){
-        return function(req,res) {
+    listarProdutos(req,res){
+  
                 Produtos_dao.selectProdutos( function(erro,resultados){
                     if (erro){
-                        res.send("Deu erro em" + resultados.length);
+                        res.send("Deu erro em" + resultados);
                     }
+                    console.log(req.session)
                     res.marko(
                         require('../views/produtos/Produtos.marko'),{
                         produtos: resultados
                         });    
                 })
                 
-        }}
+        }
 
 
 
@@ -32,7 +33,8 @@ class ProdutosController
                     if (produto.length < 1) {
                         return console.log('Erro')
                     }
-                    console.log(req.session.login)
+                    console.log(req.session)
+
                     res.marko(  
                         require('../views/produtos/produtoinfo.marko'),{
                         prod: produto,
