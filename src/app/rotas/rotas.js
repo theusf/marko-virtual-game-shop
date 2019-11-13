@@ -24,6 +24,24 @@ app.get('/', Produtos.listarProdutos);
 app.get('/login', function(req,res){
     console.log("Variavel de Sessao LOGIN = " + req.session.usuario );
 
+    if (req.session.usuario)
+    {
+        res.redirect("/");
+    }
+
+    res.marko(
+        require('../views/usuarios/login.marko')
+    )
+}); 
+
+
+app.get('/sair', function(req,res){
+   
+    if (!req.session.usuario)
+    {   //Ja está deslogado
+        res.redirect("/")
+    }
+    req.session = null;
     res.marko(
         require('../views/usuarios/login.marko')
     )
@@ -38,6 +56,9 @@ app.post('/addcarrinho', Carrinho.criarPedido);
 
 app.get('/carrinho', Carrinho.montaCarrinho); 
 
+app.post('/removeritemcarrinho', Carrinho.removerItem); 
+
+app.get('/finalizar', Carrinho.finalizarPedido); 
 
 }
 

@@ -2,16 +2,16 @@
 "use strict";
 
 var marko_template = module.exports = require("marko/src/html").t(__filename),
-    marko_componentType = "/projnode19377$1.0.0/src/app/views/usuarios/carrinho.marko",
+    marko_componentType = "/projnode19377$1.0.0/src/app/views/usuarios/compra.marko",
     components_helpers = require("marko/src/runtime/components/helpers"),
     marko_renderer = components_helpers.r,
     marko_defineComponent = components_helpers.c,
     marko_helpers = require("marko/src/runtime/html/helpers"),
     marko_loadTag = marko_helpers.t,
     component_globals_tag = marko_loadTag(require("marko/src/core-tags/components/component-globals-tag")),
+    marko_escapeXml = marko_helpers.x,
     marko_forEach = marko_helpers.f,
     marko_attr = marko_helpers.a,
-    marko_escapeXml = marko_helpers.x,
     init_components_tag = marko_loadTag(require("marko/src/core-tags/components/init-components-tag")),
     await_reorderer_tag = marko_loadTag(require("marko/src/core-tags/core/await/reorderer-renderer"));
 
@@ -22,7 +22,9 @@ function render(input, out, __component, component, state) {
 
   component_globals_tag({}, out);
 
-  out.w("<nav class=\"navbar navbar-dark bg-dark\"><div class=\"row\"><form class=\"form-inline\"><input class=\"form-control col\" type=\"search\" placeholder=\"Buscar produtos\" aria-label=\"Search\"><button class=\"form-control btn btn-success col\" type=\"submit\">Buscar</button></form><form class=\"form-inline\" action=\"/login\"><button class=\"btn btn-warning my-2 my-sm-0\" type=\"submit\"><i class=\"fas fa-shopping-cart\"></i></button></form></div></nav><div class=\"container-fluid\">");
+  out.w("<nav class=\"navbar navbar-dark bg-dark\"><div class=\"row\"><form class=\"form-inline\"><input class=\"form-control col\" type=\"search\" placeholder=\"Buscar produtos\" aria-label=\"Search\"><button class=\"form-control btn btn-success col\" type=\"submit\">Buscar</button></form><form class=\"form-inline\" action=\"/login\"><button class=\"btn btn-warning my-2 my-sm-0\" type=\"submit\"><i class=\"fas fa-shopping-cart\"></i></button></form></div></nav><div class=\"container m-5 pb-5 w-50 mx-auto rounded\" style=\"background-color: #313131; font-family:Lucida Console;\"><div class=\"row bg-light\"><div class=\"col\"><h1>Pedido " +
+    marko_escapeXml(data.prod[0].idPedido) +
+    " confirmado!</h1><h3>Status: em entrega</h3></div></div>");
 
   var $for$0 = 0;
 
@@ -31,15 +33,11 @@ function render(input, out, __component, component, state) {
 
     var $keyScope$0 = "[" + (($for$0++) + "]");
 
-    out.w("<div class=\"row bg-danger\"><div class=\"col-sm-4\" style=\"background-color:lavender;\"><img class=\"m-5\"" +
-      marko_attr("src", produto.Img) +
-      " style=\"width:20%;\"></div><div class=\"col-sm-8\" style=\"background-color:lavenderblush; text-align: right;\"><form action=\"/removeritemcarrinho\" method=\"post\"><p> <h1>" +
+    out.w("<div class=\"row bg-light\"><div class=\"col-sm-8\" style=\"background-color:lavender font-family:Lucida Console;\"><p> 1x " +
       marko_escapeXml(produto.Descricao) +
-      "</h1> </p><h3>R$ " +
+      "</p></div><div class=\"col-sm-4\" style=\"background-color:lavenderblush; text-align: right;\"><form action=\"/addcarrinho\" method=\"post\"><h3>R$ " +
       marko_escapeXml(produto.Valor_Total) +
-      "</h3> <button class=\"far fa-times-circle\" href=\"/\"> Remover</button> <br><input type=\"hidden\" name=\"id_pedido\"" +
-      marko_attr("value", "" + produto.idPedido) +
-      "> <input type=\"hidden\" name=\"id_produto\"" +
+      "</h3> <br><input type=\"hidden\" name=\"id_produto\"" +
       marko_attr("value", "" + produto.idProduto) +
       "> <input type=\"hidden\" name=\"valor_produto\"" +
       marko_attr("value", "" + produto.Valor_Total) +
@@ -48,11 +46,11 @@ function render(input, out, __component, component, state) {
 
   out.w("<div class=\"row\"> <div class=\"col-sm-4\" style=\"background-color:lavender;\"></div> <div class=\"col-sm-8\" style=\"background-color:lavenderblush; text-align: right;\"><h3>Valor total: R$ " +
     marko_escapeXml(data.vtotal) +
-    "</h3><form class=\"form-inline\" action=\"/finalizar\"><button class=\"btn my-2 my-sm-0 btn-success \" type=\"submit\">Finalizar compra</button></form></div> </div></div>");
+    "</h3></div> </div></div>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "34");
+  await_reorderer_tag({}, out, __component, "32");
 
   out.w("</body></html>");
 }
@@ -65,7 +63,7 @@ marko_template._ = marko_renderer(render, {
 marko_template.Component = marko_defineComponent({}, marko_template._);
 
 marko_template.meta = {
-    id: "/projnode19377$1.0.0/src/app/views/usuarios/carrinho.marko",
+    id: "/projnode19377$1.0.0/src/app/views/usuarios/compra.marko",
     tags: [
       "marko/src/core-tags/components/component-globals-tag",
       "marko/src/core-tags/components/init-components-tag",

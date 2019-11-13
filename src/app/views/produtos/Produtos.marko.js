@@ -34,7 +34,7 @@ function render(input, out, __component, component, state) {
       "</h1>");
   });
 
-  out.w("<form class=\"form-inline\"><input class=\"form-control col\" type=\"search\" placeholder=\"Buscar produtos\" aria-label=\"Search\"><button class=\"form-control btn btn-success col\" type=\"submit\">Buscar</button></form><form class=\"form-inline\" action=\"/carrinho\" method=\"get\"><button class=\"btn btn-warning my-2 my-sm-0\" type=\"submit\"><i class=\"fas fa-shopping-cart\"></i></button></form><form class=\"form-inline\" action=\"/login\"><button class=\"btn my-2 my-sm-0 btn-outline-success \" type=\"submit\">Login</button></form></div></nav><div class=\"container m-5 pb-5 bg-secondary\"><div class=\"row\">");
+  out.w("<form class=\"form-inline\"><input class=\"form-control col\" type=\"search\" placeholder=\"Buscar produtos\" aria-label=\"Search\"><button class=\"form-control btn btn-success col\" type=\"submit\">Buscar</button></form><form class=\"form-inline\" action=\"/carrinho\" method=\"get\"><button class=\"btn btn-warning my-2 my-sm-0\" type=\"submit\"><i class=\"fas fa-shopping-cart\"></i></button></form><form class=\"form-inline\" action=\"/login\"><button class=\"btn my-2 my-sm-0 btn-outline-success \" type=\"submit\">Login</button></form><form class=\"form-inline\" action=\"/sair\"><button class=\"btn my-2 my-sm-0 btn-outline-success \" type=\"submit\">Sair</button></form></div></nav><div class=\"container m-5 pb-5 bg-secondary\"><div class=\"row\">");
 
   var $for$1 = 0;
 
@@ -58,7 +58,7 @@ function render(input, out, __component, component, state) {
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "25");
+  await_reorderer_tag({}, out, __component, "27");
 
   out.w("</body></html>");
 }

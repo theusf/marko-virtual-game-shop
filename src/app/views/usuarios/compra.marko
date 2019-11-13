@@ -38,23 +38,24 @@
 
 
  
+<div class="container m-5 pb-5 w-50 mx-auto rounded" style="background-color: #313131; font-family:Lucida Console;">
+<div class="row bg-light">
+<div class="col"><h1>Pedido ${data.prod[0].idPedido} confirmado!</h1>
+<h3>Status: em entrega</h3></div>
+</div>
 
-<div class="container-fluid">
+
    <for (produto in data.prod)>   
-          <div class="row bg-danger">
-              <div class="col-sm-4" style="background-color:lavender;">
-                <img class="m-5" src=produto.Img style="width:20%;">
+          <div class="row bg-light">
+              <div class="col-sm-8" style="background-color:lavender font-family:Lucida Console;">
+               <p> 1x ${produto.Descricao}</p>
               </div>
                
-                  <div class="col-sm-8" style="background-color:lavenderblush; text-align: right;">
+                  <div class="col-sm-4" style="background-color:lavenderblush; text-align: right;">
                   
-                    <form action="/removeritemcarrinho" method="post">
-      
-                      <p> <h1>${produto.Descricao}</h1> </p>
-                      <h3>R$ ${produto.Valor_Total}</h3> 
-                       <button class="far fa-times-circle" href="/"> Remover</button> 
+                    <form action="/addcarrinho" method="post">
+                      <h3>R$ ${produto.Valor_Total}</h3>  
                       <br>
-                      <input type="hidden" name="id_pedido" value="${produto.idPedido}"> 
                       <input type="hidden" name="id_produto" value="${produto.idProduto}"> 
                       <input type="hidden" name="valor_produto" value="${produto.Valor_Total}"> 
                     </form>           
@@ -66,15 +67,8 @@
       
        <div class="col-sm-8" style="background-color:lavenderblush; text-align: right;">
        <h3>Valor total: R$ ${data.vtotal}</h3>
-
-            <form class="form-inline" action="/finalizar">
-              <button class="btn my-2 my-sm-0 btn-success " type="submit">Finalizar compra</button>
-              </form>
        </div>  
-
-  
       </div>
-
 </div>
 
 

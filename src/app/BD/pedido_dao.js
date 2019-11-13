@@ -81,6 +81,8 @@ class PedidoDAO
                 
 
             })
+            .catch( console.log("Erro na promise selectpedido e insertPedido do Pedido_dao") );
+
             })
         }
 
@@ -106,7 +108,7 @@ class PedidoDAO
         innerJoinCarrinho(id_usuario){
             return new Promise((resolve, reject) => {
 
-                let sql = "SELECT Produtos.Img, Produtos.idProduto, Produtos.Descricao, Items_Pedido.Qtd_Prod, Items_Pedido.Valor_Total FROM Pedidos " +
+                let sql = "SELECT Pedidos.idPedido, Produtos.Img, Produtos.idProduto, Produtos.Descricao, Items_Pedido.Qtd_Prod, Items_Pedido.Valor_Total FROM Pedidos " +
                 "INNER JOIN Items_Pedido on Items_Pedido.idPedido = Pedidos.idPedido " +
                 "INNER JOIN Produtos on Items_Pedido.idProduto = Produtos.idProduto " +
                 "WHERE Pedidos.Cod_Usuario =" + id_usuario;
@@ -123,6 +125,26 @@ class PedidoDAO
                 });      
             })
 
+
+        }
+
+
+        deleteItemsPedido(id_pedido,id_produto){
+            return new Promise((resolve, reject) => {
+            
+            let sql = "DELETE FROM Items_Pedido WHERE idPedido =" + id_pedido + " AND idProduto =" + id_produto;
+
+            console.log(sql)
+
+            this._db.all(sql, [],(err, resultados) => {
+                if (err) {
+                    return reject(err)
+                }
+                console.log(resultados)
+
+                resolve(resultados)
+            });      
+        })
 
         }
 
