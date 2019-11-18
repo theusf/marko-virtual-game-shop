@@ -42,7 +42,7 @@ class CarrinhoController
             .then(produtos => {
 
                 if (produtos.length < 1) {
-                    return console.log('Erro')
+                    console.log("Carrinho vazio...")
                 }
                 var total = 0;
 
@@ -74,28 +74,35 @@ class CarrinhoController
 
     finalizarPedido(req,res){
         
+
+        
         Pedidos.innerJoinCarrinho(req.session.usuario)
         .then(produtos => {
 
             if (produtos.length < 1) {
-                return console.log('Erro')
+                console.log('Erro ao finalizar pedido')
             }
-            var total = 0;
 
-            for (var i =0; i< produtos.length; i++)
-            {
-            
-            console.log(produtos[i].Valor_Total)
-            total += produtos[i].Valor_Total
-            console.log(total)
-            }
-            console.log(total)
+            Pedidos.setStatusDoPedido(produtos[0].idPedido,'E').then(() => {
 
-            res.marko(  
-                require('../views/usuarios/compra.marko'),{
-                prod: produtos,
-                vtotal: total    
-                });    
+                var total = 0;
+    
+                for (var i =0; i< produtos.length; i++)       
+                total += produtos[i].Valor_Total
+        
+                console.log(total)
+
+                res.marko(  
+                    require('../views/usuarios/compra.marko'),{
+                    prod: produtos,
+                    vtotal: total    
+                    });    
+
+                    console.log("Novo status do pedido:" + produtos[0].Status)
+                }
+            ).catch(err => res.send(err.message || err))
+
+           
             })
             
 
@@ -108,10 +115,10 @@ class CarrinhoController
     removerItem(req,res){
 
         
-        const { id_pedido,id_produto } = req.body
-        console.log(id_pedido + "" + id_produto)
+        const { id_pedido,id_items_ped } = req.body
+        console.log(id_pedido + "" + id_items_ped)
 
-        Pedidos.deleteItemsPedido(id_pedido,id_produto)
+        Pedidos.deleteItemsPedido(id_pedido,id_items_ped)
         .then(result => {
             res.redirect("/carrinho")
         })

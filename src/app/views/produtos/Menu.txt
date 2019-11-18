@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+
+
+    <for (usuario in data.usu)>
+    <h1>${usuario.Nome_Completo}</h1>
+    </for>
+
+    <a class="navbar-brand" href="#" style="font-family: 'Press Start 2P', cursive;">
+    <img src='https://images.vexels.com/media/users/3/157786/isolated/preview/b322e92582c9511c1cb41fc648afa7ac-lhama-silhueta-fortnite-by-vexels.png' 
+      width='50px' height='50px'>
+      eLhama Games</a>
+
+  
+    <form class="" action="/login">
+      <button class="my-2 my-sm-0 btn btn-info " type="submit">Login</button>
+    </form>
+
+    <form class="" action="/sair">
+      <button class="btn my-2 my-sm-0 btn-danger " type="submit">Sair</button>
+    </form>
+
+      <form class="mr-sm-2" action="/carrinho" method="get">
+      <button class="btn btn-warning my-2 my-sm-0" type="submit">
+        <i class="fas fa-shopping-cart"></i>
+      </button>
+    </form>
+   
+
+
+</nav>

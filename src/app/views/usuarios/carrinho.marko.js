@@ -39,8 +39,8 @@ function render(input, out, __component, component, state) {
       marko_escapeXml(produto.Valor_Total) +
       "</h3> <button class=\"far fa-times-circle\" href=\"/\"> Remover</button> <br><input type=\"hidden\" name=\"id_pedido\"" +
       marko_attr("value", "" + produto.idPedido) +
-      "> <input type=\"hidden\" name=\"id_produto\"" +
-      marko_attr("value", "" + produto.idProduto) +
+      "> <input type=\"hidden\" name=\"id_items_ped\"" +
+      marko_attr("value", "" + produto.idItems_Ped) +
       "> <input type=\"hidden\" name=\"valor_produto\"" +
       marko_attr("value", "" + produto.Valor_Total) +
       "> </form> </div></div> ");

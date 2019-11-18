@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
   span {
@@ -15,38 +16,21 @@
 
 <html >
 <body class="bg-secondary">
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-light" style="background-color: #5607b0; color: green;">
+
+   <a class="navbar-brand" href="#" style="font-family: 'Press Start 2P', cursive; ">
+    <img src='https://images.vexels.com/media/users/3/157786/isolated/preview/b322e92582c9511c1cb41fc648afa7ac-lhama-silhueta-fortnite-by-vexels.png' 
+      width='50px' height='50px'>
+      eLhama Games</a>
   
-<div class="row">
-
-    <for (usuario in data.usu)>
-    <h1>${usuario.Nome_Completo}</h1>
-    </for>
 
 
-    <form class="form-inline">
-      <input class="form-control col" type="search" placeholder="Buscar produtos"
-      aria-label="Search">
-      <button class="form-control btn btn-success col" type="submit">Buscar</button>
-    </form>
-
-    <form class="form-inline" action="/carrinho" method="get">
-      <button class="btn btn-warning my-2 my-sm-0" type="submit">
-        <i class="fas fa-shopping-cart"></i>
-      </button>
-    </form>
-
-    <form class="form-inline" action="/login">
-      <button class="btn my-2 my-sm-0 btn-outline-success " type="submit">Login</button>
-    </form>
-
-    <form class="form-inline" action="/sair">
-      <button class="btn my-2 my-sm-0 btn-outline-success " type="submit">Sair</button>
-    </form>
-   
-</div>
+  <form class="form-inline" action="/carrinho" method="get">
+    <button class="btn btn-warning my-2 my-sm-0" type="submit"><i class="fas fa-shopping-cart"></i></button>
+  </form>
 
 </nav>
+
 
 
  <div class="container m-5 pb-5 bg-secondary">

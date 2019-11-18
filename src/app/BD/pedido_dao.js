@@ -108,10 +108,10 @@ class PedidoDAO
         innerJoinCarrinho(id_usuario){
             return new Promise((resolve, reject) => {
 
-                let sql = "SELECT Pedidos.idPedido, Produtos.Img, Produtos.idProduto, Produtos.Descricao, Items_Pedido.Qtd_Prod, Items_Pedido.Valor_Total FROM Pedidos " +
+                let sql = "SELECT Pedidos.Status, Items_Pedido.idItems_Ped, Pedidos.idPedido, Produtos.Img, Produtos.idProduto, Produtos.Descricao, Items_Pedido.Qtd_Prod, Items_Pedido.Valor_Total FROM Pedidos " +
                 "INNER JOIN Items_Pedido on Items_Pedido.idPedido = Pedidos.idPedido " +
                 "INNER JOIN Produtos on Items_Pedido.idProduto = Produtos.idProduto " +
-                "WHERE Pedidos.Cod_Usuario =" + id_usuario;
+                "WHERE Pedidos.Cod_Usuario =" + id_usuario + " and Pedidos.status = 'A'" ;
 
                 console.log(sql)
 
@@ -129,10 +129,31 @@ class PedidoDAO
         }
 
 
-        deleteItemsPedido(id_pedido,id_produto){
+        deleteItemsPedido(id_pedido,id_items_ped){
             return new Promise((resolve, reject) => {
             
-            let sql = "DELETE FROM Items_Pedido WHERE idPedido =" + id_pedido + " AND idProduto =" + id_produto;
+            let sql = "DELETE FROM Items_Pedido WHERE idPedido =" + id_pedido + " AND idItems_Ped =" + id_items_ped;
+
+            console.log(sql)
+
+            this._db.all(sql, [],(err, resultados) => {
+                if (err) {
+                    return reject(err)
+                }
+                console.log(resultados)
+
+                resolve(resultados)
+            });      
+        })
+
+        }
+
+
+
+        setStatusDoPedido(id_pedido,status){
+            return new Promise((resolve, reject) => {
+            
+            let sql = "UPDATE Pedidos set Status = '" + status + "' WHERE idPedido = " + id_pedido
 
             console.log(sql)
 
