@@ -1,40 +1,36 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
-<style>
-  span {
-    display: inline-block;
-    width: 30%;
-    height: 50%;
-    margin: 9px;
-  }
-</style>
-
+<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
 
 
 <html >
-<body class="bg-secondary">
-<nav class="navbar navbar-dark bg-dark">
-  
-<div class="row">
+<body style="background-color: #525252;">
 
-    <form class="form-inline">
-      <input class="form-control col" type="search" placeholder="Buscar produtos"
-      aria-label="Search">
-      <button class="form-control btn btn-success col" type="submit">Buscar</button>
-    </form>
 
-    <form class="form-inline" action="/login">
-      <button class="btn btn-warning my-2 my-sm-0" type="submit">
-        <i class="fas fa-shopping-cart"></i>
-      </button>
-    </form>
+<nav class="navbar navbar-expand-sm bg-dark "  >
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item active  ">
+          <a class="col" href="#" style="color: #f8f8f8; ">
+              <img src='https://cdn4.iconfinder.com/data/icons/gradient-ui-1/512/games-512.png' 
+                width='50px' height='50px'>
+                </a>
+      </li>
+      <li class="nav-item pl-5 " style="width:600px">
+          <input type="text" class="form-control form-control-lg border-0" style="background-color: #525252">
+      </li>
+      <li class="nav-item pl-5">
+          <a class="nav-link"  href="/login" style="color: #f8f8f8; font-family: 'Exo', sans-serif; " > <i class="fas fa-user fa-2x"> </i>    Entrar</a>
+        </li>
+      <li class="nav-item pl-5">
+          <form class="form-inline col" action="/carrinho" method="get">
+            <button class="btn btn-dark " type="submit"><i class="fas fa-shopping-cart fa-2x"></i></button>
+          </form>
+      </li>
+    </ul>
+  </nav>
 
-   
-</div>
 
-</nav>
 
 
  

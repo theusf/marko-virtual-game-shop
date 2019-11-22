@@ -29,7 +29,9 @@ class PedidoDAO
         this.selectPedido(id_usuario).then(pedido =>
             {   
                 console.log(pedido);
-                console.log(pedido[0].idPedido);
+                //console.log(pedido[0].idPedido);
+                console.log('Pedido lenght: ')
+                console.log(pedido.length);
 
                 var id_pedido;
 

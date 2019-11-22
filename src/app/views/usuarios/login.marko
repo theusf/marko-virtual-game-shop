@@ -1,8 +1,38 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
 
 
-<body class= "bg-dark">
+<html >
+<body style="background-color: #525252;">
+
+
+<nav class="navbar navbar-expand-sm bg-dark "  >
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item active  ">
+          <a class="col" href="#" style="color: #f8f8f8; ">
+              <img src='https://cdn4.iconfinder.com/data/icons/gradient-ui-1/512/games-512.png' 
+                width='50px' height='50px'>
+                </a>
+      </li>
+      <li class="nav-item pl-5 " style="width:600px">
+          <input type="text" class="form-control form-control-lg border-0" style="background-color: #525252">
+      </li>
+      <li class="nav-item pl-5">
+          <a class="nav-link"  href="/login" style="color: #f8f8f8; font-family: 'Exo', sans-serif; " > <i class="fas fa-user fa-2x"> </i>    Entrar</a>
+        </li>
+      <li class="nav-item pl-5">
+          <form class="form-inline col" action="/carrinho" method="get">
+            <button class="btn btn-dark " type="submit"><i class="fas fa-shopping-cart fa-2x"></i></button>
+          </form>
+      </li>
+    </ul>
+  </nav>
+
+
+
+
   <div class="container m-5 pb-5">
 <div class="container m-5 pb-5 w-25 mx-auto rounded" style="background-color: #313131;">
  <form action="/validaracesso" method="post" class="m-1 pb-1 pt-4">
@@ -30,3 +60,4 @@
 </div>
 
 </body>
+</html>
