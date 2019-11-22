@@ -18,11 +18,11 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
 function render(input, out, __component, component, state) {
   var data = input;
 
-  out.w("<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\"><script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script><link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.0/css/all.css\" integrity=\"sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ\" crossorigin=\"anonymous\"><link href=\"https://fonts.googleapis.com/css?family=Exo&amp;display=swap\" rel=\"stylesheet\"><html><body style=\"background-color: #525252;\">");
+  out.w("<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\"><script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script><link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.0/css/all.css\" integrity=\"sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ\" crossorigin=\"anonymous\"><link href=\"https://fonts.googleapis.com/css?family=Exo&amp;display=swap\" rel=\"stylesheet\"><style>\r\n  span {\r\n    display: inline-block;\r\n    width: 30%;\r\n    height: 50%;\r\n    margin: 9px;\r\n    font-family: 'Exo', sans-serif; \r\n    color: white;\r\n  }\r\n\r\n  body{\r\n\r\n        font-family: 'Exo', sans-serif; \r\n    color: white;\r\n\r\n  }\r\n</style><html><body style=\"background-color: #525252;\">");
 
   component_globals_tag({}, out);
 
-  out.w("<nav class=\"navbar navbar-expand-sm bg-dark \"><ul class=\"navbar-nav mx-auto\"><li class=\"nav-item active  \"><a class=\"col\" href=\"#\" style=\"color: #f8f8f8; \"><img src=\"https://cdn4.iconfinder.com/data/icons/gradient-ui-1/512/games-512.png\" width=\"50px\" height=\"50px\"></a></li><li class=\"nav-item pl-5 \" style=\"width:600px\"><input type=\"text\" class=\"form-control form-control-lg border-0\" style=\"background-color: #525252\"></li><li class=\"nav-item pl-5\"><a class=\"nav-link\" href=\"/login\" style=\"color: #f8f8f8; font-family: 'Exo', sans-serif; \"> <i class=\"fas fa-user fa-2x\"> </i> Entrar</a></li><li class=\"nav-item pl-5\"><form class=\"form-inline col\" action=\"/carrinho\" method=\"get\"><button class=\"btn btn-dark \" type=\"submit\"><i class=\"fas fa-shopping-cart fa-2x\"></i></button></form></li></ul></nav><div class=\"container-fluid\">");
+  out.w("<nav class=\"navbar navbar-expand-sm bg-dark \"><ul class=\"navbar-nav mx-auto\"><li class=\"nav-item active  \"><a class=\"col\" href=\"/\" style=\"color: #f8f8f8; \"><img src=\"https://cdn4.iconfinder.com/data/icons/gradient-ui-1/512/games-512.png\" width=\"50px\" height=\"50px\"></a></li><li class=\"nav-item pl-5 \" style=\"width:600px\"><input type=\"text\" class=\"form-control form-control-lg border-0\" style=\"background-color: #525252\"></li><li class=\"nav-item pl-5\"><a class=\"nav-link\" href=\"/login\" style=\"color: #f8f8f8; \"> <i class=\"fas fa-user fa-2x\"> </i> Entrar</a></li><li class=\"nav-item pl-5\"><form class=\"form-inline col\" action=\"/carrinho\" method=\"get\"><button class=\"btn btn-dark \" type=\"submit\"><i class=\"fas fa-shopping-cart fa-2x\"></i></button></form></li></ul></nav><div class=\"container m-5 pb-5 mx-auto \">");
 
   var $for$0 = 0;
 
@@ -31,13 +31,13 @@ function render(input, out, __component, component, state) {
 
     var $keyScope$0 = "[" + (($for$0++) + "]");
 
-    out.w("<div class=\"row bg-danger\"><div class=\"col-sm-4\" style=\"background-color:lavender;\"><img class=\"m-5\"" +
+    out.w("<div class=\"row\"><div class=\"col-sm-4\"><img class=\"\"" +
       marko_attr("src", produto.Img) +
-      " style=\"width:20%;\"></div><div class=\"col-sm-8\" style=\"background-color:lavenderblush; text-align: right;\"><form action=\"/removeritemcarrinho\" method=\"post\"><p> <h1>" +
+      " style=\"width:100%;\"></div><div class=\"col-sm-8\" style=\"background-color:#232931; text-align: right;\"> <form action=\"/removeritemcarrinho\" method=\"post\"><p> <h1>" +
       marko_escapeXml(produto.Descricao) +
       "</h1> </p><h3>R$ " +
       marko_escapeXml(produto.Valor_Total) +
-      "</h3> <button class=\"far fa-times-circle\" href=\"/\"> Remover</button> <br><input type=\"hidden\" name=\"id_pedido\"" +
+      "</h3> <button class=\"far fa-times-circle btn btn-danger\"> </button> <br><input type=\"hidden\" name=\"id_pedido\"" +
       marko_attr("value", "" + produto.idPedido) +
       "> <input type=\"hidden\" name=\"id_items_ped\"" +
       marko_attr("value", "" + produto.idItems_Ped) +
@@ -46,13 +46,13 @@ function render(input, out, __component, component, state) {
       "> </form> </div></div> ");
   });
 
-  out.w("<div class=\"row\"> <div class=\"col-sm-4\" style=\"background-color:lavender;\"></div> <div class=\"col-sm-8\" style=\"background-color:lavenderblush; text-align: right;\"><h3>Valor total: R$ " +
+  out.w("<div class=\"row\"> <div class=\"col-sm-4\"></div> <div class=\"col-sm-8\" style=\"background-color:#6541A5; text-align: right;\"><h3>Valor total: R$ " +
     marko_escapeXml(data.vtotal) +
-    "</h3><form class=\"form-inline\" action=\"/finalizar\"><button class=\"btn my-2 my-sm-0 btn-success \" type=\"submit\">Finalizar compra</button></form></div> </div></div>");
+    "</h3><form class=\"form-inline\" action=\"/finalizar\"><button class=\"btn btn-success \" type=\"submit\">Finalizar compra</button></form></div> </div></div>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "40");
+  await_reorderer_tag({}, out, __component, "41");
 
   out.w("</body></html>");
 }

@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
 
 <style>
   span {
@@ -8,6 +9,15 @@
     width: 30%;
     height: 50%;
     margin: 9px;
+    font-family: 'Exo', sans-serif; 
+    color: white;
+  }
+
+  body{
+
+        font-family: 'Exo', sans-serif; 
+    color: white;
+
   }
 </style>
 
@@ -20,7 +30,7 @@
 <nav class="navbar navbar-expand-sm bg-dark "  >
     <ul class="navbar-nav mx-auto">
       <li class="nav-item active  ">
-          <a class="col" href="#" style="color: #f8f8f8; ">
+          <a class="col" href="/" style="color: #f8f8f8; ">
               <img src='https://cdn4.iconfinder.com/data/icons/gradient-ui-1/512/games-512.png' 
                 width='50px' height='50px'>
                 </a>
@@ -42,33 +52,34 @@
 
  
 
+<div class="container m-5 pb-5 mx-auto ">
 
    <for (produto in data.prod)>
       
         <div class="container-fluid">
-          <div class="row bg-danger">
+          <div class="row ">
 
-              <div class="col-sm-4" style="background-color:lavender;">
-              <img class="m-5" src=produto.Img style="width:50%;">
+              <div class="col-sm-8" >
+              <img class="" src=produto.Img style="width:100%;">
 
               </div>
                        
-                  <div class="col-sm-8" style="background-color:lavenderblush; text-align: right;">   
+                  <div class="col-sm-4" style="background-color:#232931; text-align: right;">   
                   <form action="/addcarrinho" method="post">
                   <p> <h1>${produto.Descricao}</h1> </p>
-                  <div class="">${produto.Preco}</div>  
+                  <h3> R$ ${produto.Preco}</h3>  
                
-                  <button class="btn btn-success my-2 my-sm-0" type="submit">Adicionar ao carrim</button>
+                  <button class="btn btn-outline-dark my-2 my-sm-0 text-light" style="" type="submit">Adicionar ao carrim</button>
                   <br>
-                     <input class="" name="id_produto" value="${produto.idProduto}"> 
-                  <input class="" name="valor_produto" value="${produto.Preco}"> 
+                     <input class="" type="hidden" name="id_produto" value="${produto.idProduto}"> 
+                  <input class="" type="hidden"  name="valor_produto" value="${produto.Preco}"> 
                   </form>          
               </div>            
             </div>
           </div>
    </for>
 
-
+</div>
     
 </body>
 </html>

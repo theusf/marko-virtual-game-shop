@@ -4,6 +4,8 @@
 <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
+
+
 <style>
   span {
     display: inline-block;
@@ -20,13 +22,13 @@
 </style>
 
 <html >
-<body style="background-color: #525252;">
+<body style="background-color: #525252; color: white;">
 
 
 <nav class="navbar navbar-expand-sm bg-dark "  >
     <ul class="navbar-nav mx-auto">
       <li class="nav-item active  ">
-          <a class="col" href="#" style="color: #f8f8f8; ">
+          <a class="col" href="/" style="color: #f8f8f8; ">
               <img src='https://cdn4.iconfinder.com/data/icons/gradient-ui-1/512/games-512.png' 
                 width='50px' height='50px'>
                 </a>
@@ -35,7 +37,10 @@
           <input type="text" class="form-control form-control-lg border-0" style="background-color: #525252">
       </li>
       <li class="nav-item pl-5">
-          <a class="nav-link"  href="/login" style="color: #f8f8f8; " > <i class="fas fa-user fa-2x"> </i>    Entrar</a>
+          <a class="nav-link" href="/login" style="color: #f8f8f8; " > <i class="fas fa-user fa-2x"> </i>    Entrar</a>
+        </li>
+      <li class="nav-item pl-5">
+          <a class="nav-link"  href="/sair" style="color: #f8f8f8; " > <i class="fas fa-user fa-2x"> </i>    Sair</a>
         </li>
       <li class="nav-item pl-5">
           <form class="form-inline col" action="/carrinho" method="get">
@@ -75,7 +80,7 @@
                   <div class="m-1">${produto.Descricao}</div>
                   <div class="m-1"><img width="20%" src="https://i.dlpng.com/static/png/5424057-five-star-png-free-download-fourjayorg-fivestar-png-1057_296_preview.png"></div>
                   <div class="m-1">${produto.Preco}</div>  
-                  <div class="m-1">${produto.idProduto}</div>  
+                  <div class="m-1 text-secondary">cod#${produto.idProduto}</div>  
             </span>
           </a>
    </for>

@@ -3,6 +3,25 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
 
+<style>
+  span {
+    display: inline-block;
+    width: 30%;
+    height: 50%;
+    margin: 9px;
+    font-family: 'Exo', sans-serif; 
+    color: white;
+  }
+
+  body{
+
+        font-family: 'Exo', sans-serif; 
+    color: white;
+
+  }
+</style>
+
+
 
 <html >
 <body style="background-color: #525252;">
@@ -11,7 +30,7 @@
 <nav class="navbar navbar-expand-sm bg-dark "  >
     <ul class="navbar-nav mx-auto">
       <li class="nav-item active  ">
-          <a class="col" href="#" style="color: #f8f8f8; ">
+          <a class="col" href="/" style="color: #f8f8f8; ">
               <img src='https://cdn4.iconfinder.com/data/icons/gradient-ui-1/512/games-512.png' 
                 width='50px' height='50px'>
                 </a>
@@ -20,7 +39,7 @@
           <input type="text" class="form-control form-control-lg border-0" style="background-color: #525252">
       </li>
       <li class="nav-item pl-5">
-          <a class="nav-link"  href="/login" style="color: #f8f8f8; font-family: 'Exo', sans-serif; " > <i class="fas fa-user fa-2x"> </i>    Entrar</a>
+          <a class="nav-link"  href="/login" style="color: #f8f8f8; " > <i class="fas fa-user fa-2x"> </i>    Entrar</a>
         </li>
       <li class="nav-item pl-5">
           <form class="form-inline col" action="/carrinho" method="get">
@@ -32,23 +51,22 @@
 
 
 
-
  
 
-<div class="container-fluid">
+<div class="container m-5 pb-5 mx-auto ">
    <for (produto in data.prod)>   
-          <div class="row bg-danger">
-              <div class="col-sm-4" style="background-color:lavender;">
-                <img class="m-5" src=produto.Img style="width:20%;">
+          <div class="row">
+              <div class="col-sm-4" >
+                <img class="" src=produto.Img style="width:100%;">
               </div>
                
-                  <div class="col-sm-8" style="background-color:lavenderblush; text-align: right;">
+                  <div class="col-sm-8" style="background-color:#232931; text-align: right;"> 
                   
                     <form action="/removeritemcarrinho" method="post">
       
                       <p> <h1>${produto.Descricao}</h1> </p>
                       <h3>R$ ${produto.Valor_Total}</h3> 
-                       <button class="far fa-times-circle" href="/"> Remover</button> 
+                       <button class="far fa-times-circle btn btn-danger"> </button> 
                       <br>
                       <input type="hidden" name="id_pedido" value="${produto.idPedido}"> 
                       <input type="hidden" name="id_items_ped" value="${produto.idItems_Ped}"> 
@@ -58,13 +76,13 @@
             </div>         
    </for>
     <div class="row"> 
-      <div class="col-sm-4" style="background-color:lavender;"></div>       
+      <div class="col-sm-4"></div>       
       
-       <div class="col-sm-8" style="background-color:lavenderblush; text-align: right;">
+       <div class="col-sm-8" style="background-color:#6541A5; text-align: right;">
        <h3>Valor total: R$ ${data.vtotal}</h3>
 
             <form class="form-inline" action="/finalizar">
-              <button class="btn my-2 my-sm-0 btn-success " type="submit">Finalizar compra</button>
+              <button class="btn btn-success " type="submit">Finalizar compra</button>
               </form>
        </div>  
 
