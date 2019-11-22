@@ -7,6 +7,14 @@ class ProdutosController
 {
 
     listarProdutos(req,res){
+
+            var Entrar = 'Login'
+            console.log(req.session.usuario + "AAAAAAAAAAAAAAAAAAA")
+            if (req.session.usuario)
+            Entrar = 'Sair'
+            else
+            console.log('OOOOOOOOOOOOOOOOOOO')
+
   
                 Produtos_dao.selectProdutos( function(erro,resultados){
                     if (erro){
@@ -15,7 +23,8 @@ class ProdutosController
                     console.log(req.session)
                     res.marko(
                         require('../views/produtos/Produtos.marko'),{
-                        produtos: resultados
+                        produtos: resultados,
+                        logado: Entrar
                         });    
                 })
                 
