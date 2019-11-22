@@ -2,19 +2,21 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
 <style>
   span {
     display: inline-block;
-    width: 200px;
-    height: 320px;
+    width: 210px;
+    height: 230px;
     margin: 9px;
+    background-color: #313131;
+    position: relative;
+    font-family: 'Exo', sans-serif; 
+    color: white;
   }
 
-  a {
-    color: #f8f8f8;
-
-  };
+ 
 </style>
 
 <html >
@@ -33,7 +35,7 @@
           <input type="text" class="form-control form-control-lg border-0" style="background-color: #525252">
       </li>
       <li class="nav-item pl-5">
-          <a class="nav-link"  href="/login" style="color: #f8f8f8; font-family: 'Exo', sans-serif; " > <i class="fas fa-user fa-2x"> </i>    Entrar</a>
+          <a class="nav-link"  href="/login" style="color: #f8f8f8; " > <i class="fas fa-user fa-2x"> </i>    Entrar</a>
         </li>
       <li class="nav-item pl-5">
           <form class="form-inline col" action="/carrinho" method="get">
@@ -68,9 +70,10 @@
 <div class="row">
    <for (produto in data.produtos)>
       <a href="/produtoinfo/${produto.idProduto}">
-             <span class="rounded bg-light" >
-                 <img class="m-5" src=produto.Img style="width:50%;">
+             <span class="rounded" >
+                 <img class="" src=produto.Img style="width:100%;">
                   <div class="m-1">${produto.Descricao}</div>
+                  <div class="m-1"><img width="20%" src="https://i.dlpng.com/static/png/5424057-five-star-png-free-download-fourjayorg-fivestar-png-1057_296_preview.png"></div>
                   <div class="m-1">${produto.Preco}</div>  
                   <div class="m-1">${produto.idProduto}</div>  
             </span>
