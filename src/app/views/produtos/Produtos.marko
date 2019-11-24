@@ -55,6 +55,9 @@
             <div class="carousel-item active">
               <img class="d-block w-100"  src="https://renovamidia.com.br/wp-content/uploads/2019/11/Diablo-IV-game-e-anunciado-oficialmente-e-ganha-trailer.jpg" alt="First slide">
             </div>
+            <div class="carousel-caption d-none d-md-block">
+                <h5>DIABLO IV :: PRÉ-VENDA EM BREVE</h5>
+              </div>
             <div class="carousel-item">
               <img class="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeCScFWx1T8S_Dfu_06VLYgYsUKWNHJb26jFTpZIbLMWE1thIA" alt="Second slide">
             </div>
@@ -69,14 +72,14 @@
         </div>
       </div>
 
-<div class="row">
+<div class="row pt-2">
    <for (produto in data.produtos)>
       <a href="/produtoinfo/${produto.idProduto}">
              <span class="rounded" >
                  <img class="" src=produto.Img style="width:100%;">
                   <div class="m-1">${produto.Descricao}</div>
-                  <div class="m-1"><img width="20%" src="https://i.dlpng.com/static/png/5424057-five-star-png-free-download-fourjayorg-fivestar-png-1057_296_preview.png"></div>
-                  <div class="m-1">${produto.Preco}</div>  
+                  <div class="m-1"><img width="30%" src="https://hiltonheadorthopedics.com/wp-content/uploads/2018/09/five-stars.png"></div>
+                  <div class="m-1">R$${produto.Preco}</div>  
                   <div class="m-1 text-secondary">cod#${produto.idProduto}</div>  
             </span>
           </a>

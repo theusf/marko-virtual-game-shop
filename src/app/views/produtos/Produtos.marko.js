@@ -26,7 +26,7 @@ function render(input, out, __component, component, state) {
     marko_attr("href", "/" + data.logado) +
     " style=\"color: #f8f8f8; \"> <i class=\"fas fa-user fa-2x\"> </i> " +
     marko_escapeXml(data.logado) +
-    "</a></li><li class=\"nav-item pl-5\"><form class=\"form-inline col\" action=\"/carrinho\" method=\"get\"><button class=\"btn btn-dark \" type=\"submit\"><i class=\"fas fa-shopping-cart fa-2x\"></i></button></form></li></ul></nav><div class=\"container m-5 pb-5 mx-auto \"><div id=\"carouselExampleControls\" class=\"carousel slide\" data-ride=\"carousel\"><div class=\"carousel-inner\"><div class=\"carousel-item active\"><img class=\"d-block w-100\" src=\"https://renovamidia.com.br/wp-content/uploads/2019/11/Diablo-IV-game-e-anunciado-oficialmente-e-ganha-trailer.jpg\" alt=\"First slide\"></div><div class=\"carousel-item\"><img class=\"d-block w-100\" src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeCScFWx1T8S_Dfu_06VLYgYsUKWNHJb26jFTpZIbLMWE1thIA\" alt=\"Second slide\"></div><a class=\"carousel-control-prev\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"prev\"><span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span><span class=\"sr-only\">Previous</span></a><a class=\"carousel-control-next\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"next\"><span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span><span class=\"sr-only\">Next</span></a></div></div><div class=\"row\">");
+    "</a></li><li class=\"nav-item pl-5\"><form class=\"form-inline col\" action=\"/carrinho\" method=\"get\"><button class=\"btn btn-dark \" type=\"submit\"><i class=\"fas fa-shopping-cart fa-2x\"></i></button></form></li></ul></nav><div class=\"container m-5 pb-5 mx-auto \"><div id=\"carouselExampleControls\" class=\"carousel slide\" data-ride=\"carousel\"><div class=\"carousel-inner\"><div class=\"carousel-item active\"><img class=\"d-block w-100\" src=\"https://renovamidia.com.br/wp-content/uploads/2019/11/Diablo-IV-game-e-anunciado-oficialmente-e-ganha-trailer.jpg\" alt=\"First slide\"></div><div class=\"carousel-caption d-none d-md-block\"><h5>DIABLO IV :: PRÉ-VENDA EM BREVE</h5></div><div class=\"carousel-item\"><img class=\"d-block w-100\" src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTeCScFWx1T8S_Dfu_06VLYgYsUKWNHJb26jFTpZIbLMWE1thIA\" alt=\"Second slide\"></div><a class=\"carousel-control-prev\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"prev\"><span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span><span class=\"sr-only\">Previous</span></a><a class=\"carousel-control-next\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"next\"><span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span><span class=\"sr-only\">Next</span></a></div></div><div class=\"row pt-2\">");
 
   var $for$0 = 0;
 
@@ -39,7 +39,7 @@ function render(input, out, __component, component, state) {
       marko_attr("src", produto.Img) +
       " style=\"width:100%;\"><div class=\"m-1\">" +
       marko_escapeXml(produto.Descricao) +
-      "</div><div class=\"m-1\"><img width=\"20%\" src=\"https://i.dlpng.com/static/png/5424057-five-star-png-free-download-fourjayorg-fivestar-png-1057_296_preview.png\"></div><div class=\"m-1\">" +
+      "</div><div class=\"m-1\"><img width=\"30%\" src=\"https://hiltonheadorthopedics.com/wp-content/uploads/2018/09/five-stars.png\"></div><div class=\"m-1\">R$" +
       marko_escapeXml(produto.Preco) +
       "</div> <div class=\"m-1 text-secondary\">cod#" +
       marko_escapeXml(produto.idProduto) +
@@ -50,7 +50,7 @@ function render(input, out, __component, component, state) {
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "44");
+  await_reorderer_tag({}, out, __component, "46");
 
   out.w("</body></html>");
 }

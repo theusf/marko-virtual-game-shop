@@ -5,21 +5,25 @@ const UsuariosDAO = require('../BD/usuarios_dao');
 class UsuariosController {
 
 
-    validarAcesso()
+    cadastrarusuario(req,res)
     {
-        return function(req,res) {
-            const usuarios = new UsuariosDAO(db);
-            //console.log(req.body.login,req.body.senha);
-            console.log(usuarios.selectUsuario(req.body.login,req.body.senha))
-            usuarios.selectUsuario(req.body.login,req.body.senha).then(resultados => 
-            {   console.log(resultados)
-                
 
-            })
-            
-                //res.send("ne ntrou" + usuarios.selectUsuario(req.body.login,req.body.senha));
+           const Usu = new UsuariosDAO(db)
 
-        }
+           Usu.insertUsuario(
+            req.body.cpf,
+            req.body.nome,
+            req.body.celular,
+            req.body.telefone,
+            req.body.email,
+            req.body.data_nascimento,
+            req.body.senha
+           ).then( () => {
+
+                res.redirect("/login")
+
+           })
+           .catch(err => res.send(err.message || err));
 
 
     }

@@ -2,7 +2,7 @@
 const Produtos = require('../controllers/produtos_controller');
 const Autenticacao = require('../controllers/autenticacao_controller');
 const Carrinho = require('../controllers/carrinho_controller');
-
+const Usuario = require('../controllers/usuarios_controller')
 
 module.exports = (app) => {
 
@@ -47,6 +47,14 @@ app.get('/sair', function(req,res){
     )
 }); 
 
+app.get('/cadastro', function(req,res){
+     res.marko(
+        require('../views/usuarios/cadastro.marko')
+    )
+}); 
+
+
+app.post('/cadastrarusuario', Usuario.cadastrarusuario); 
 
 app.post('/validaracesso', Autenticacao.validarAcesso); 
 

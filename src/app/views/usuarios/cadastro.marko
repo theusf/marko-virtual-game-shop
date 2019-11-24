@@ -34,21 +34,58 @@
 
 
   <div class="container mx-auto ">
-
-      <div class="container m-5 pb-5 w-100 mx-auto rounded" style="background-image: url('https://relvion.com/wp-content/uploads/2019/04/thumb-1920-655418-696x392.jpg')">
-      <br>
-      <br>
-      <br>
-      </div>
-
 <div class="container m-5 pb-5 w-100 mx-auto rounded" style="background-color: #313131;">
- <form action="/validaracesso" method="post" class="m-1 pb-1 pt-4">
+ 
+<form action="/cadastrarusuario" method="post" class="m-1 pb-1 pt-4">
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <button class="btn btn-dark" type="button" id="button-addon1">Nome Completo</button>
+    </div>
+    <input type="text" name="nome"  style="color: white;" class=" border-0 bg-secondary form-control">
+    
+  </div>
+
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <button class="btn btn-dark" type="button" id="button-addon1">CPF</button>
+    </div>
+    <input type="text" name="cpf"   style="color: white;" class=" border-0 bg-secondary form-control">
+    
+  </div>
+
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <button class="btn btn-dark" type="button" id="button-addon1">Celular</button>
+    </div>
+    <input type="text" name="celular"  style="color: white;" class=" border-0 bg-secondary form-control">
+    
+  </div>
+
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <button class="btn btn-dark" type="button" id="button-addon1">Telefone</button>
+    </div>
+    <input type="text" name="telefone"  style="color: white;" class=" border-0 bg-secondary form-control">
+    
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <button class="btn btn-dark" type="button" id="button-addon1">Data de Nascimento</button>
+    </div>
+    <input type="date" name="data_nascimento"  style="color: white;" value="2011-08-19" class=" border-0 bg-secondary form-control">
+  </div>
+
 
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <button class="btn btn-dark" type="button" id="button-addon1">E-mail</button>
     </div>
-    <input type="text" name="login" class=" border-0 bg-secondary form-control">
+    <input type="text" name="email"   style="color: white;" class=" border-0 bg-secondary form-control">
     
   </div>
 
@@ -56,17 +93,12 @@
     <div class="input-group-prepend">
       <button class="btn btn-dark" type="button" id="button-addon1">Senha</button>
     </div>
-    <input type="password" name="senha" class="border-0 bg-secondary form-control" >
+    <input type="text" name="senha"  style="color: white;" class="border-0 bg-secondary form-control" >
     
   </div>
-  <button class="btn btn-outline-dark text-light" type="submit">Login</button>
-  
+  <button class="btn btn-outline-dark text-light" type="submit">Enviar</button>
 
   </form>
-    
-  <form action="/cadastro" method="get" >
-    <button class="btn btn-outline-dark text-light ml-1 " type="submit">Cadastrar-se</button>
-    </form>
 
 </div>
 </div>
